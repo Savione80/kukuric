@@ -1,0 +1,73 @@
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=53c3a954-61f5-4765-b430-201c63914523");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+button {
+  outline: none; }
+
+@font-face {
+  font-family: "Gill Sans W01 Book";
+  src: url("Fonts/2cebe80c-b289-4ae0-a3b0-baa82c6c6e10.eot?#iefix");
+  src: url("Fonts/2cebe80c-b289-4ae0-a3b0-baa82c6c6e10.eot?#iefix") format("eot"), url("Fonts/2bc69477-90c2-4415-a51f-36e36eee3d5e.woff") format("woff"), url("Fonts/33447d8d-d920-48e7-b0a9-1d3dda80d6a6.ttf") format("truetype"), url("Fonts/e49c440c-7653-44ce-96d2-f775947ba9fe.svg#e49c440c-7653-44ce-96d2-f775947ba9fe") format("svg"); }
+@font-face {
+  font-family: "Gill Sans W01 Bold";
+  src: url("Fonts/1a6dec8e-26f9-4243-8495-835709538f92.eot?#iefix");
+  src: url("Fonts/1a6dec8e-26f9-4243-8495-835709538f92.eot?#iefix") format("eot"), url("Fonts/f05272f9-83e3-4de6-8423-5d57f730c87b.woff") format("woff"), url("Fonts/33f5d8d9-105f-4a49-9351-74ecae7f4a49.ttf") format("truetype"), url("Fonts/b56150eb-5caa-4385-b907-373e97ddb2ff.svg#b56150eb-5caa-4385-b907-373e97ddb2ff") format("svg"); }
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box; }
+
+body {
+  font-family: "Gill Sans W01 Book"; }
+
+a {
+  text-decoration: none; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  background: #fff;
+  color: #fff;
+  font-size: 16px; }
+  body#artist {
+    background: #fff; }

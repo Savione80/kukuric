@@ -1,0 +1,30 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10 " lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <!-- Title block allowing child pages to override -->
+        <title>{% block title %}Stardust{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+        <!-- Styles -->
+        {{ "vendor/modernizr.min.js" | asset_url | script_tag }}
+        {{ "application.css" | asset_url | stylesheet_tag }}
+
+        <!-- Style block allowing child pages to inject their own styles -->
+        {% block styles %}{% endblock %}
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <!-- Include -->
+            {% include "header" %}
+            {% block content %}{% endblock %}
+            {% include "footer" %}
+        </div>
+        <!-- Script block allowing child pages to inject their own scripts -->
+        {% include "script" %}
+    </body>
+</html>
