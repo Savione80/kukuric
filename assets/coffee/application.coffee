@@ -82,4 +82,10 @@ $ ->
 
 
 
+	fixedHeader = $ '.js-fixed-header'
+	if fixedHeader.length > 0
+			new fixHeader fixedHeader
 
+	navigation = $ '.js-navigation'
+	if navigation.length > 0
+		new showNavigation navigation

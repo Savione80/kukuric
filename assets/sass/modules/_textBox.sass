@@ -1,0 +1,61 @@
+.textBanner
+  height: 50vh
+  width: 100%
+  padding: 35px
+  display: block
+  position: relative
+  background-image: url(../images/stripes.svg)
+  +vertical-center
+
+.text
+  position: relative
+  text-align: center
+  * + *
+    margin-top: 15px
+
+.text__title
+  font-family: $font-sans-bold
+  font-size: 30px
+  text-transform: uppercase
+
+.text__description
+  line-height: 1.5em
+  font-family: $font-serif-regular
+  font-size: 16px
+
+.textBannerSpecial
+  position: relative
+  z-index: 9
+  width: 50vw
+  background-color: #fff
+  background-image: url(../images/stripes.svg)
+  background-size: 20px
+  margin: 0 auto
+  padding: 16px
+  border-radius: 4px
+
+.textBannerSpecial__aux
+  padding: 54px 80px
+  border: 2px solid #f2f2f2
+  background-color: #fff
+
+.imageContainer
+  background: 50% 50%/cover
+  position: relative
+  min-height: 100vh
+  width: 100vw
+  transform-style: inherit
+  &:before
+    content: ""
+    background: 50% 50%/cover
+    -webkit-transform: translateZ(-1px) scale(2)
+    transform: translateZ(-1px) scale(2)
+    z-index: -1
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+
+.slide1:before
+  background-image: url(../images/03.jpg)

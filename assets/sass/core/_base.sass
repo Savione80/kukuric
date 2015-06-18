@@ -1,15 +1,36 @@
 // base
 
+html
+	height: 100%
+	overflow: hidden
+
 a
 	text-decoration: none
 
-body
-	@extend %font-sans-regular
-	-webkit-font-smoothing: antialiased
-	background: #fff
-	color: #fff
-	font:
-		size: $base-fontSize
 
-	&#artist
-		background: #fff
+body
+	-webkit-font-smoothing: antialiased
+	background: #f3f1f1
+	color: #5B534A
+	font-size: 16px
+	-webkit-perspective: 1px
+	perspective: 1px
+	-webkit-transform-style: preserve-3d
+	transform-style: preserve-3d
+	height: 100%
+	overflow-y: scroll
+	overflow-x: hidden
+	&.disabled
+		overflow: hidden
+
+.wrapper
+	max-width: 1440px
+	margin: 0 auto
+	overflow: hidden
+	position: relative
+
+.content
+	position: relative
+	background: #fff
+
+

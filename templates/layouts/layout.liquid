@@ -6,7 +6,7 @@
 <!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
     <head>
         <!-- Title block allowing child pages to override -->
-        <title>{% block title %}Stardust{% endblock %}</title>
+        <title>{% block title %}KUKURIC{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
         <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
         <!-- Styles -->
@@ -18,12 +18,9 @@
 
     </head>
     <body>
-        <div id="wrapper">
-            <!-- Include -->
-            {% include "header" %}
-            {% block content %}{% endblock %}
-            {% include "footer" %}
-        </div>
+        {% include "header" %}
+        {% block content %}{% endblock %}
+        {% include "footer" %}
         <!-- Script block allowing child pages to inject their own scripts -->
         {% include "script" %}
     </body>

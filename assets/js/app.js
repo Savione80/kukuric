@@ -6,7 +6,7 @@
   }
 
   $(function() {
-    var getIOSVersion;
+    var fixedHeader, getIOSVersion, navigation;
     window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     getIOSVersion = function() {
       var v;
@@ -45,7 +45,7 @@
         return "-" + m1.toLowerCase();
       }).replace(/^ms-/, "-ms-");
     }
-    return window.helpers = {
+    window.helpers = {
       detectIE8: (function(_this) {
         return function() {
           var IE_version, msie, ua;
@@ -75,11 +75,84 @@
         };
       })(this)
     };
+    fixedHeader = $('.js-fixed-header');
+    if (fixedHeader.length > 0) {
+      new fixHeader(fixedHeader);
+    }
+    navigation = $('.js-navigation');
+    if (navigation.length > 0) {
+      return new showNavigation(navigation);
+    }
   });
 
 }).call(this);
 
 (function() {
+  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
+  window.fixHeader = (function() {
+    function fixHeader(ref) {
+      this.ref = ref;
+      this.onScroll = __bind(this.onScroll, this);
+      this.window_ref = $(window);
+      this.window_ref.on('scroll', this.onScroll);
+      this.previousTop = 0;
+      this.ref_h = this.ref.height();
+    }
+
+    fixHeader.prototype.onScroll = function() {
+      this.currentTop = this.window_ref.scrollTop();
+      if (this.currentTop < this.previousTop) {
+        if (this.currentTop > 0 && this.ref.hasClass('is-fixed')) {
+          this.ref.addClass('is-visible');
+        } else {
+          this.ref.removeClass('is-visible is-fixed');
+        }
+      } else {
+        this.ref.removeClass('is-visible');
+        if (this.currentTop > this.ref_h && !this.ref.hasClass('is-fixed')) {
+          this.ref.addClass('is-fixed');
+        }
+      }
+      this.previousTop = this.currentTop;
+    };
+
+    return fixHeader;
+
+  })();
+
+}).call(this);
+
+(function() {
+  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+
+  window.showNavigation = (function() {
+    function showNavigation(ref) {
+      this.ref = ref;
+      this.showNavigation = __bind(this.showNavigation, this);
+      this.window_ref = $(window);
+      this.w_h = this.window_ref.height();
+      this.body = $('body');
+      this.btn = this.ref.find('.js-navigation-btn');
+      this.navigationWrapper = this.ref.find('.js-navigation-navigationWrapper');
+      this.btn.on('click', this.showNavigation);
+      this.btn.on('click', this.toggleHamburger);
+    }
+
+    showNavigation.prototype.showNavigation = function() {
+      if (this.btn.hasClass('is-clicked')) {
+        this.btn.removeClass('is-clicked');
+        this.ref.removeClass('open');
+        return this.body.removeClass('disabled');
+      } else {
+        this.btn.addClass('is-clicked');
+        this.ref.addClass('open');
+        return this.body.addClass('disabled');
+      }
+    };
+
+    return showNavigation;
+
+  })();
 
 }).call(this);
